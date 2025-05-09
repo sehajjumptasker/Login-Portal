@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-box {
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #4A90E2;
+        }
+
+        .button-group {
+            text-align: center;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #357ABD;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="login-btn" onclick="validateLogin()">Login</button>
+                </div>
+                <div class="error-message" id="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const usernameone = document.getElementById('username').value;
+            const passwordone = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            // Hardcoded credentials (for demonstration purposes)
+            const correctUsername = "sehaj";
+            const correctPassword = "sehaj@7820";
+            const correctUsernameone = "jayansh";
+            const correctPasswordone = "jayansh@0777";
+            
+            // Validate the credentials
+            if (username === correctUsername && password === correctPassword) {
+                // Redirect to dashboard if valid
+                window.location.href = "index2.html";
+            } if(usernameone === correctUsernameone && passwordone === correctPasswordone) {
+                window.location.href = "indexone.html";
+            } else {
+                // Show error message if credentials are invalid
+                errorMessage.textContent = "Invalid username or password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>

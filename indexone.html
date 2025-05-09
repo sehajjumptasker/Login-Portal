@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      font-family: sans-serif;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #c70707, #ff7b00);
+      margin-bottom: 10px;
+    }
+
+    .profile-label {
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 30px;
+    }
+
+    .nav-button {
+      width: 80%;
+      padding: 10px 15px;
+      margin: 8px 0;
+      background: #f0f0f0;
+      border: none;
+      border-radius: 5px;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #ddd;
+    }
+
+    .main {
+      flex: 1;
+      position: relative;
+      padding: 30px;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80') no-repeat center center;
+      background-size: cover;
+      overflow-y: auto;
+    }
+
+    .main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: none;
+      color: white;
+      font-size: 24px;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .main img{
+      border-radius: 20px;
+      border-width: 20px;
+      border-color: white;
+    }
+
+    .main h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+    }
+
+    .main h4 {
+      font-family: Arial, Helvetica, sans-serif;
+     position: absolute;
+     left: 40px;
+    }
+
+    .main h1 {
+      font-family: Arial, Helvetica, sans-serif;
+     position: absolute;
+     left: 40px;
+    }
+
+    .main p {
+      font-family: Arial, Helvetica, sans-serif;
+     position: absolute;
+     left: 40px;
+  
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="profile-pic"></div>
+    <div class="profile-label">PROFILE</div>
+
+    <button class="nav-button" onclick="showContent('dashboard')">HOME</button>
+    <button class="nav-button" onclick="onclick=window.location.href='https://look827.github.io/Chat-app/'">ROOM</button>
+    <button class="nav-button" onclick="onclick=window.location.href='https://form.jotform.com/251234491156454'">APPLY LEAVE</button>
+    <button class="nav-button" onclick="onclick=window.location.href='https://cvkbu7kf-n.my.canva.site/alerts'">ALERTS</button>
+    <button class="nav-button" onclick="window.location.href = 'index.html'">Logout</button>
+  </div>
+
+  <div class="main">
+    <div id="dashboard" class="content active"><center>Welcome to the Dashboard!</center>
+        
+      <br>
+      <img src="2.png" height="150px" width="150px"> <h3>Hello, Jayansh Mahajan</h3>
+    <h4>COO</h4>
+    <br><br><br>
+    <h1>About</h1>
+    <br><br><br> 
+    
+    <p>This is Jayansh the CEO of THE MONEY TASKERS. I handle this company and this company has also made a lot of profit.</p>
+
+    <br><br><br>
+    <h1>Phone Number</h1>
+    <br><br><br> 
+    
+    <p>+91 98156 23347</p>
+
+    <br><br><br>
+    <h1>Email</h1>
+    <br><br><br> 
+    
+    <p>jayansh@tmtmail.com</p>
+          </div>
+
+
+          
+    </div>
+    <div id="messages" class="content">Here are your Messages.</div>
+    <div id="settings" class="content">Settings Panel</div>
+    <div id="logout" class="content">You have been logged out.</div>
+  </div>
+
+  <script>
+    function showContent(id) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
